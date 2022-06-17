@@ -60,6 +60,7 @@ const App = () => {
       <Input
         w="50%"
         size="sm"
+        mb="10"
         variant="flushed"
         color="whiteAlpha.700"
         placeholder="Type coin name"
