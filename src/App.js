@@ -40,7 +40,9 @@ const App = () => {
         console.log(response.data);
         setIsLoading(false);
         setCoinData(response.data);
+        coinData.map((e) => console.log(e.price_change_percentage_24h));
       });
+    // console.log(filterCoins.price_change_percentage_24h.toFixed(2));
   };
 
   return (
@@ -102,18 +104,18 @@ const App = () => {
                     <Text>{coins.symbol}</Text>
                   </Td>
                   <Td>
-                    <Text>${coins.current_price.toFixed(2)}</Text>
+                    <Text>${coins.current_price}</Text>
                   </Td>
                   {coins.price_change_percentage_24h < 0 ? (
                     <Td>
                       <Text color="red">
-                        {coins.price_change_percentage_24h.toFixed(2)}%
+                        {coins.price_change_percentage_24h}%
                       </Text>
                     </Td>
                   ) : (
                     <Td>
                       <Text color="green">
-                        {coins.price_change_percentage_24h.toFixed(2)}%
+                        {coins.price_change_percentage_24h}%
                       </Text>
                     </Td>
                   )}
